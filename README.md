@@ -33,3 +33,11 @@ To get translated Enum value in GridField, you need to return the value in this 
 			return i18nEnum::getTranslatedValue($this->className, __FUNCTION__, $this->{__FUNCTION__});
 		}
 	}
+
+By default translation namespace will be your DataObject class name and the entity will be constructed like this: "db_{DbField}_{enum value}".
+So your translation file should look like this:
+
+	lang:
+	  MyDataObject:
+	    db_DbField_default: 'Default'
+	    db_DbField_other: 'Other'
