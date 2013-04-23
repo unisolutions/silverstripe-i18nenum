@@ -41,3 +41,7 @@ So your translation file should look like this:
 	  MyDataObject:
 	    db_DbField_default: 'Default'
 	    db_DbField_other: 'Other'
+
+## Known issues
+
+*  GridField filtering in GridFieldFilterHeader won't work as expected - it still constructs the search filter using enum values only.
