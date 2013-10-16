@@ -22,8 +22,11 @@ class i18nEnum extends Enum {
 	 */
 	public function setValue($value, $record = null) {
 		parent::setValue($value, $record);
-		if ($record && isset($record['ClassName']) && !empty($record['ClassName'])) {
-			$this->DbObjectName = $record['ClassName'];
+		if (is_array($record)) {
+			$record = (object) $record;
+		}
+		if ($record && !empty($record->ClassName)) {
+			$this->DbObjectName = $record->ClassName;
 		}
 	}
 
